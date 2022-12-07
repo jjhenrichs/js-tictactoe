@@ -1,0 +1,52 @@
+* {
+    background-color: blueviolet;
+}
+
+body{
+    height: 100%; 
+}
+
+h1 {
+    border: 5px solid yellow;
+    outline: 5px solid #241773; /* Raven's purple */
+    margin: 10px;
+    padding: 10px;
+    text-align: center;
+    font-size: 4em;           /* Default size of em is 16px */
+    color: goldenrod;           /* Text color */
+}
+
+table {
+    background-color: goldenrod;
+    text-align: center;
+    width: 600px;
+    height: 600px;
+    margin: auto;
+    border-collapse: collapse;
+}
+
+td {
+    width: 200px;
+    height: 200px;
+    background-color: #9E7C0C; /* Metallic gold */
+}
+
+#board {
+    padding: 20px;
+}
+
+.top {
+    border-bottom: 20px solid black;
+}
+
+.bottom {
+    border-top: 20px solid black;
+}
+
+.left {
+    border-right: 20px solid black;
+}
+
+.right {
+    border-left: 20px solid black;
+}
