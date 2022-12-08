@@ -13,21 +13,22 @@
     <div id="board">
         <table>
             <tr id="row-1">
-                <td id="tl-corner" class="top left"></td>
-                <td id="top" class="top"></td>
-                <td id="tr-corner" class="top right"></td>
+                <td id="tl-corner" class="top left" onclick="clickTile('tl-corner')"></td>
+                <td id="top" class="top" onclick="clickTile('top')"></td>
+                <td id="tr-corner" class="top right" onclick="clickTile('tr-corner')"></td>
             </tr>
             <tr id="row-2">
-                <td id="left" class="left"></td>
-                <td id="center" class="center"></td>
-                <td id="right" class="right"></td>
+                <td id="left" class="left" onclick="clickTile('left')"></td>
+                <td id="center" class="center" onclick="clickTile('center')"></td>
+                <td id="right" class="right" onclick="clickTile('right')"></td>
             </tr>
             <tr id="row-3">
-                <td id="bl-corner" class="bottom left"></td>
-                <td id="bottom" class="bottom"></td>
-                <td id="br-corner" class="bottom right"></td>
+                <td id="bl-corner" class="bottom left" onclick="clickTile('bl-corner')"></td>
+                <td id="bottom" class="bottom" onclick="clickTile('bottom')"></td>
+                <td id="br-corner" class="bottom right" onclick="clickTile('br-corner')"></td>
             </tr>
         </table>
     </div>
+    <div id="message">This message indicates the status of the game.</div>
 </body>
 </html>

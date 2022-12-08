@@ -19,15 +19,16 @@ h1 {
 table {
     background-color: goldenrod;
     text-align: center;
-    width: 600px;
-    height: 600px;
+    width: 400px;
+    height: 400px;
     margin: auto;
     border-collapse: collapse;
+    cursor: pointer;
 }
 
 td {
-    width: 200px;
-    height: 200px;
+    width: calc(100%/3);
+    height: calc(100%/3);
     background-color: #9E7C0C; /* Metallic gold */
 }
 
@@ -49,4 +50,11 @@ td {
 
 .right {
     border-left: 20px solid black;
+}
+
+#message {
+    text-align:center;
+    font-size: 2em;
+    font-weight: bold;
+    color: #241773;
 }
