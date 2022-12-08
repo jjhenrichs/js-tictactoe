@@ -1,5 +1,8 @@
 * {
     background-color: blueviolet;
+    font-size: 96px;
+    font-weight: bold;
+    color: #241773;
 }
 
 body{
@@ -12,7 +15,7 @@ h1 {
     margin: 10px;
     padding: 10px;
     text-align: center;
-    font-size: 4em;           /* Default size of em is 16px */
+    font-size: 1em;           /* Default size of em is 16px */
     color: goldenrod;           /* Text color */
 }
 
@@ -54,7 +57,7 @@ td {
 
 #message {
     text-align:center;
-    font-size: 2em;
+    font-size: .25em;
     font-weight: bold;
     color: #241773;
 }

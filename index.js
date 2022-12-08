@@ -24,18 +24,20 @@ var turn = 1;
 // By defaut Play 1 (X) goes first
 var mark = "X";
 
+var message = document.getElementById('message');
+
 // Retrieves id from the board
-var clickTile = (id) => {
-    document.getElementById(id).innerHTML = mark;
-    turn++ == 9 ? boardFilled() : turn;
-    mark = turn % 2 == 0 ? "O" : "X";   // Mark changes based on who turn it is (Odd for Player 1 (X), Even for Player 2 (O))
-    console.log(turn, mark);
-    document.querySelector('#'+id).disabled = true; //Makes the tile unclickable after it is been clicked
+var clickTile = (id, position) => {
+    var element = document.getElementById(id);
+
+    // check to see if space is already occupied
+    if (arr[position] == "") {
+        element.innerHTML = mark;
+        arr[position] = mark;
+    } else {
+        message.innerHTML = "That space is already occupied.";
+    }
+    
 }
-
-
-
-// When the Board is Completed
-var boardFilled = () => document.getElementById('message').innerHTML = "Draw. There are no winners."
 
 console.log(turn, mark);
