@@ -34,10 +34,22 @@ var clickTile = (id, position) => {
     if (arr[position] == "") {
         element.innerHTML = mark;
         arr[position] = mark;
+        updateStatus();             // Change the status once a valid move is made
     } else {
-        message.innerHTML = "That space is already occupied.";
+        message.innerHTML = `Tile ${position+1} is already occupied.`;
     }
     
+}
+
+var updateStatus = () => {
+    turn++;
+    mark = turn % 2 == 0 ? "O" : "X";
+
+    if (mark == "O") {
+        message.innerHTML = "It's Player 2's (O) turn."
+    } else {
+        message.innerHTML = "It's Player 1's (X) turn."
+    }
 }
 
 console.log(turn, mark);
