@@ -16,40 +16,99 @@
 // })
 
 // Spaces of the tic-tac-toe board
-var arr = ["", "", "", "", "", "", "", "", ""]
+var board = ["", "", "", "", "", "", "", "", ""]
 
 // Stores the number of turns
-var turn = 1;
+var turn = 0;
 
-// By defaut Play 1 (X) goes first
+// By defaut Player 1 goes first
 var mark = "X";
 
 var message = document.getElementById('message');
 
-// Retrieves id from the board
+// Retrieves id and position of tile from the board
 var clickTile = (id, position) => {
     var element = document.getElementById(id);
 
     // check to see if space is already occupied
-    if (arr[position] == "") {
+    if (board[position] == "") {
         element.innerHTML = mark;
-        arr[position] = mark;
+        board[position] = mark;
+        
         updateStatus();             // Change the status once a valid move is made
-    } else {
-        message.innerHTML = `Tile ${position+1} is already occupied.`;
+        
     }
-    
+
 }
 
+// Updates the turn, mark, and tells whose turn it is.
 var updateStatus = () => {
     turn++;
-    mark = turn % 2 == 0 ? "O" : "X";
+
+    if (turn > 4) {
+
+        if (verifyWinner()) {
+            boardUnclickable();
+            return;
+        } else {
+            if (!board.includes("")) {
+                message.innerHTML = "This game has concluded in a draw.";
+                return;
+            }
+        }
+    }
+
+    mark = turn % 2 == 0 ? "X" : "O";
 
     if (mark == "O") {
         message.innerHTML = "It's Player 2's (O) turn."
     } else {
         message.innerHTML = "It's Player 1's (X) turn."
     }
+
 }
 
-console.log(turn, mark);
+// Winning Combinations
+const WinCombos = [
+    [0, 1, 2],
+    [3, 4, 5],
+    [6, 7, 8],
+    [0, 4, 8],
+    [2, 4, 6],
+    [0, 3, 6],
+    [1, 4, 7],
+    [2, 5, 8]
+];
+
+// Check for a winner
+var verifyWinner = () => {
+
+    for (i = 0; i < WinCombos.length; i++) {
+
+        arr = [];
+
+        for (j = 0; j < WinCombos[i].length; j++){
+            arr.push(board[WinCombos[i][j]]);
+        }
+
+        if (arr.every((value) => value == mark) ) {
+            if (mark == "X") {
+                message.innerHTML = "Player 1 Wins. Congrats, Player 1";
+            } else {
+                message.innerHTML = "Player 2 Wins. Congrats, Player 2.";
+            }
+
+            return true;
+        }
+    }
+
+    return false;
+}
+
+var boardUnclickable = () => {
+    for (i = 0; i < board.length; i++) {
+        if (board[i] == "") {
+            board[i] = "-";
+        }
+    }
+}
