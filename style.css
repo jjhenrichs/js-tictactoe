@@ -1,11 +1,9 @@
 * {
     background-color: blueviolet;
-    font-size: 96px;
-    font-weight: bold;
     color: #241773;
 }
 
-body{
+body {
     height: 100%; 
 }
 
@@ -15,7 +13,7 @@ h1 {
     margin: 10px;
     padding: 10px;
     text-align: center;
-    font-size: 1em;           /* Default size of em is 16px */
+    font-size: 5em;           /* Default size of em is 16px */
     color: goldenrod;           /* Text color */
 }
 
@@ -57,7 +55,27 @@ td {
 
 #message {
     text-align:center;
-    font-size: .25em;
+    font-size: 2em;
     font-weight: bold;
     color: #241773;
+}
+
+#btn-container {
+    position: relative;
+}
+
+.btn-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 140px;
+}
+
+#restart-btn {
+    background-color: goldenrod;
+    font-size: 1.5em;
+    font-weight: bold;
+    border: 5px solid #241773;
+    border-radius: 20px;
+    padding: 10px;
 }

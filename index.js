@@ -49,10 +49,12 @@ var updateStatus = () => {
 
         if (verifyWinner()) {
             boardUnclickable();
+            addRestartBtn();
             return;
         } else {
             if (!board.includes("")) {
                 message.innerHTML = "This game has concluded in a draw.";
+                addRestartBtn();
                 return;
             }
         }
@@ -111,4 +113,25 @@ var boardUnclickable = () => {
             board[i] = "-";
         }
     }
+}
+
+var restart = () => location.reload();      // Refreshes html page
+
+// Generate new button using javascript DOM
+var addRestartBtn = () => {
+    
+    var btnContainer = document.createElement("div");
+    btnContainer.setAttribute("id", "btn-container");
+
+    var btnCenter = document.createElement("div");
+    btnCenter.setAttribute("class", "btn-center");
+
+    var button = document.createElement("button");
+    button.setAttribute("id", "restart-btn");
+    button.innerHTML = 'Play Again?';
+    button.addEventListener('click', restart);          // Adding functionality to button DOM
+
+    btnCenter.appendChild(button);
+    btnContainer.appendChild(btnCenter);
+    document.body.appendChild(btnContainer);
 }
