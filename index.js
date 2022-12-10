@@ -36,9 +36,7 @@ var clickTile = (id, position) => {
         board[position] = mark;
         
         updateStatus();             // Change the status once a valid move is made
-        
     }
-
 }
 
 // Updates the turn, mark, and tells whose turn it is.
@@ -67,7 +65,6 @@ var updateStatus = () => {
     } else {
         message.innerHTML = "It's Player 1's (X) turn."
     }
-
 }
 
 // Winning Combinations

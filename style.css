@@ -31,6 +31,9 @@ td {
     width: calc(100%/3);
     height: calc(100%/3);
     background-color: #9E7C0C; /* Metallic gold */
+    font-size: 6em;
+    font-weight: bold;
+    color: #241773;
 }
 
 #board {
